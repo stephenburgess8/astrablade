@@ -1,0 +1,221 @@
+body {
+	background-color: #FCFBFF;
+	color: #111218;
+}
+
+h3{
+	margin: 25px 0 0 10px;
+
+}
+
+h4 {
+	font-size: .884em;
+}
+.letter {
+	font-family: 'Zeyada', cursive;
+	font-size: 2.62em;
+}
+
+h5 {
+	display: block;
+	float: right;
+}
+
+hr {
+	margin: 0 0 16px 10px;
+}
+
+.icon {
+	top: 8px;
+	position: relative;
+	padding-right: 2px;
+}
+
+#topbar {
+	padding: 0;
+	margin: 0 inherit 0;
+}
+
+#logout {
+	display:none;float:right;;
+}
+
+#mainStory {
+	background-color: #EEEEF5;
+}
+
+#storyHolder {
+	margin:0;
+}
+
+form {
+	padding: 0;
+	margin: 0;
+}
+
+.story {
+	margin: 0 auto;
+	padding: 15px 15px 7px;
+	display: none;
+	font-size: 1.3em;
+	line-height: 1.3em;
+}
+
+.story p {
+	margin: 0;
+}
+
+#setupDiv {
+	font-size: 1em;
+}
+
+input, button {
+	font-size: 1em;
+	margin-top: 10px;
+}
+
+.ui-button-text-only .ui-button-text, .ui-widget {
+font-size: 1em;
+
+}
+
+
+.radio {
+}
+
+#generateName {
+	font-size: 1em;
+}
+
+#actorSubmit {
+	font-family: 'Roboto', sans;
+	margin: 12px 15px 12px ;
+	font-size: 2em;
+
+}
+
+#typeInfo {
+	margin: 10px 0;
+}
+
+.avatar {
+	width: 50%;
+	height: 50%;
+}
+
+#avatar {
+	width: 28%;
+	height: 28%;
+	float: left;
+	margin: 0 10px;
+}
+
+#avatarSelect label, #avatarSelect input{
+	padding: 0;
+	width: 33.1%;
+}
+
+#profession {
+	font-size: 1em;
+}
+
+
+#cardinals {
+	
+	padding: 10px;
+	background-color: #FCFBFF;
+	border: 1pt solid #CEDAF3;
+	margin: 10px auto 0;
+	height: 90%;
+}
+
+#mainImage {
+	background-color: #262626;
+    background-image: url(/astrablade/images/inn.jpg);
+    min-height: 394px;
+}
+
+#info {
+	word-wrap:break-word;
+	padding-left: 10px;
+	padding-top: 4px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	background-color: #8B92A0;
+}
+
+#type {
+	font-size: 1.2em;
+	color: #CEDAF3;
+
+}
+
+#stats {
+	list-style-type: none;
+	margin: 0 0 10px;
+	font-size: 1.3em;
+}
+
+#stats li {
+	margin: 5px 0 5px 20px;
+}
+
+.field {
+	float: right;
+	margin-right:0;
+	padding: 0 5px;
+
+}
+
+#healthBar, #manaBar {
+	margin: 2px 20px 2px 0;
+}
+
+#bagBackground {
+	background-color: #EEEEF5;
+}
+
+a:link {
+	text-decoration: none;
+	font-weight: 500;
+	color: #14171B;
+}
+
+a:hover {
+	color: #8B92A0;
+}
+
+.border {
+	margin: 0;
+	padding: 0;
+  	-moz-box-sizing:    border-box;
+   	-webkit-box-sizing: border-box;
+    box-sizing:        border-box;
+    border: 1pt solid #14171B;
+}
+
+i {
+	font-family: 'Josefin Slab', serif;
+	font-style: italic;
+	font-weight: 600;
+	font-size: 1.2em;
+	color: #2e302b;
+}
+
+i a:link{
+	font-weight: 600;
+}
+
+footer {
+	background: #8B92A0;
+	margin-bottom: 10px;
+
+}
+
+footer p {
+	margin: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+	#cardinals {margin-top:0;}
+}

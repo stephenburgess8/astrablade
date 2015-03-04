@@ -1,0 +1,377 @@
+<!--
+Content Creation, Design, and Development
+Stephen Burgess
+stephen.burgess@purchase.edu
+The Astre Blade
+2014
+-->
+<!DOCTYPE html>
+<!-- HTML5 -->
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <!-- Meta Data
+  ================================================== -->
+    <meta charset="utf-8">
+
+    <title>Astrablade (interactive fiction)</title>
+    <meta content="An interactive fiction choose-your-own-adventure story."
+    name="description">
+    <meta content="Stephen Burgess" name="author"><!-- Mobile Specific Meta
+  ================================================== -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name=
+    "viewport"><!-- CSS
+  ================================================== -->
+
+    <link href="css/base.css" rel="stylesheet"> 
+    <link href="css/skeleton.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link href="css/astrablade-theme/jquery-ui-1.10.4.custom.css" rel="stylesheet">-->
+    <link href="css/astrablade-theme/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+
+    <link href=
+    'http://fonts.googleapis.com/css?family=Roboto:300,500|Zeyada|Josefin+Slab:400italic,600italic'
+    rel='stylesheet'>
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Favicons
+    ================================================== 
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+     jQuery
+    ================================================== -->
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/processing.js"></script>
+    <script src="js/minim.js"></script>
+
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+    <!-- Primary Page Layout
+    ================================================== -->
+
+    <div class="container">
+        <header class="row" id="topbar">
+
+            <hgroup>
+                <div class="eight columns alpha omega" id="logo">
+                    <h3 class="letter">Astrablade (demo)</h3>
+                </div>
+
+                <div class="eight columns alpha omega" id="version">
+                    <h5>Version 0.7</h5>
+                    <br /> <br />
+                    <a href="php/restart.php" style="float:right;">Start Over</a>
+                </div>
+            </hgroup>
+            
+        </header>
+        <!--  -->
+        <div class="twelve columns border" id="mainStory">
+        	<!-- -->
+        	<div class="eight columns" id="storyHolder">
+
+        		<article class="story" id="introDiv" style="display:block;">
+        			<p>
+        				This is a set of minigames. They takes place in an alternate universe with some unusual rules. You play as a character in the town of Narriweather. You make the choices that define reality here.  <a href="#" class="next" id="nportDiv" style="display:block; float:right;">Continue</a>
+        			</p>
+        			
+        		</article>
+
+        		<article class="story" id="portDiv" style="display:none;">
+        			<h4>The Narriweather Town Square </h4>
+        			<ul id="townSquare"><li>
+    				  	<a href="#" class="next" id="nhelloDiv" style="display:block; float:right;">Change your name</a>
+    				  </li>
+    				  <li>
+    				  	<a href="#" class="next" id="nsetupDiv">Choose a profession</a>
+    				</li>
+    					<li>
+    				  	<a href="knight.html" target="_blank" style="display:block; float:right;">Knight's Tour Puzzle</a>
+    				  </li>
+    				  <li>
+    				  	<a href="balibrawl.html" target="_blank">Play Bali Brawl</a>
+    				  </li>
+    				  <li>
+    				  	<a href="convobird/" target="_blank">Convo Bird</a>
+    				  </li>
+    				</ul>
+        			
+        		</article>
+
+
+	            <article class="story" id="helloDiv" style="display:none;">
+	            	<h4>Choose your Name</h4>
+	            	<p style="margin-bottom:10px">Generate a random name or choose your own</p>
+	                <div class="radio" id="genderSelect">
+						
+						<input id="allGenders" name="gender" type="radio" value="0"  checked="checked" >
+						<label for="allGenders">All</label>
+						<input id="otherGender" name="gender" type="radio" value="1">
+                        <label for="otherGender">Other</label>
+                        <input id="femaleGender" name="gender" type="radio" value="2">
+                        <label for="femaleGender">Lady</label>
+                        <input id="maleGender" name="gender" type="radio" value="3">
+                        <label for="maleGender">Fellow</label>
+
+					</div>
+	                <div class="radio" id="commonalitySelect">
+						
+						<input id="allCommonalities" name="commonality" type="radio" value="0" checked="checked" >
+						<label for="allCommonalities">All</label>
+						<input id="familiarName" name="commonality" type="radio" value="1">
+                        <label for="familiarName">Familiar</label>
+                        <input id="unusualName" name="commonality" type="radio" value="2" >
+                        <label for="unusualName">Unusual</label>
+
+					</div>
+					<input type="button" id="generateName" name="generateName" value="Generate a name" style="font-size:1em;">
+
+					<form action="php/hello.php" id="hello" method="post" name="hello">
+	                    <label for="actorInput">Name:</label>
+	                    <input autofocus="" id="actorInput" name="actorInput" placeholder="Your name..." type="text">
+	                    <input name="actorSubmit" type="submit" value="Enter">
+	                </form>
+
+	            </article>
+
+	            <article class="story" id="setupDiv" style="display:none;">
+	            	<h4>Choose your starting stats.</h4>
+	            	<form name="setup" id="setupForm" action="php/setup.php" method="post">
+						
+						<div class="radio" id="profession">
+							
+							<input id="officer" name="type" type="radio" value="officer" checked="checked" >
+	                        <label for="officer">Reserve Officer</label>
+	                        <input id="merchant" name="type" type="radio" value="merchant">
+	                        <label for="merchant">Merchant Trader</label>
+	                        <input id="inventor" name="type" type="radio" value="inventor">
+	                        <label for="inventor">Inventor</label>
+	                        <input id="adept" name="type" type="radio" value="adept">
+	                        <label for="adept">Martial Arts Adept</label>
+	                        <input id="freelancer" name="type" type="radio" value="freelancer">
+	                        <label for="freelancer">Freelancer</label>
+						 </div>
+						
+						<div class="accordion" id="typeInfo">
+		                	<h3>What do these mean?</h3>
+		                	<ul>
+			                	<li>Reserve officer is the tank / highest strength character... not too smart or charming though. </li>
+			                	<li>Merchant trader is wily, and is supported by a caravan who stick together.</li> <li>Inventor uses technology to protect her/himself and keep enemies at a distance with powerful ranged attacks.</li> <li>Martial Arts Adept is a master of hand-to-hand combat but lacks wealth or charisma.</li>
+			                	<li>Freelancer doesn't have much of anything except luck and lots of endurance.</li>
+			                </ul>
+		            	</div>
+
+		            	<h3>Choose an avatar</h3>
+		            	<div class="radio" id="avatarSelect">
+							
+							<input id="actor0" name="avatar" type="radio" value="actor0" checked="checked" >
+	                        <label for="actor0"><img src="images/actor0.png" alt="Actor 0" class="avatar" /></label>
+	                        <input id="actor1" name="avatar" type="radio" value="actor1">
+	                        <label for="actor1"><img src="images/actor1.png" alt="Actor 1" class="avatar" /></label>
+	                        <input id="actor2" name="avatar" type="radio" value="actor2">
+	                        <label for="actor2"><img src="images/actor2.png" alt="Actor 2" class="avatar" /></label>
+	                        <!--<input id="actor3" name="avatar" type="radio" value="actor1">
+	                        <label for="actor3"><img src="images/actor3.png" alt="Actor 3"></label>
+	                        <input id="actor4" name="avatar" type="radio" value="actor4">
+	                        <label for="actor4"><img src="images/actor4.png" alt="Actor 4"></label>-->
+						 </div>
+
+						<input type="submit" id="typeSubmit" name="typeSubmit" value="Next">
+						
+					</form>
+		            
+	            </article><!-- Setup Form -->
+
+	            <article class="story" id="state00" title='Inn Room' style="display:none;">
+	                <p>You wake up in a small room in an inn. The morning light
+	                coming through the window just reached your pillow. The fire
+	                went out during the night and now the room is cold.</P><a class="move" href="#" id="s00.0">Look around</a> <br />
+	                <a class="move" href="#" id="s01">Go to the lobby.</a>
+	            </article>
+
+	            <article class="story" id="state00.0" title='Inn Room' style="display:none;">
+	                <p>You open the drawers of the dresser. You find the ring you'd
+	                taken off before you went to sleep.  Otherwise there are a couple of
+	                postcards. One has a photo of the town, with the name
+	                'Narriweather'. Hmm, that must be the name of this place. The
+	                other is an advertisement for a general shop, 'Yea Olde
+	                Shoppe'.<br />
+	                
+	                <a class="move" href="#" id="s01">Go to the lobby.</a></p>
+	            </article>
+
+	            <article class="story" id="state01" title='Inn Dining Room' style="display:none;">
+	                <p>You are in the main dining room of an inn. Despite the early
+	                hour there are heavy curtains over the window. The room is lit
+	                by the fire and lamps. There is a woman sitting near the fire.
+	                You cannot see her face from here. <a class="move" href="#" id=
+	                "s02">Talk to the woman.</a> A few tables away is a young man
+	                eating breakfast. <a class="move" href="#" id="s04">Talk to the
+	                young man.</a><br>
+	                <a class="move" href="#" id="s03">Talk to the
+	                Innkeeper.</a></p>
+	            </article>
+
+	            <article class="story" id="state02" title='Mysterious Woman' style="display:none;">
+	                <p>You move over to her table. Her hooded cape shrouds most of
+	                her face and it is difficult to tell her age. <i>Excuse me, I'm
+	                new to this town. Can you tell me a little about it?</i> You
+	                cannot read her expression, but she answers <i>Yes traveller,
+	                this town will be called Narriweather. It escapes most of the
+	                turmoil that has plagued this realm. In town you have found a
+	                general store, a blacksmith, and the homes of those who live
+	                here. While you were here, will you run an errand for me?</i>
+	                You find the way she speaks very strange, but she manages to
+	                come off as serene and confident.
+	                <br />
+	                <a class="move" href="#" id="s02c">Chat with the woman.</a><br>
+	                <a class="move" href="#" id="s03">Talk to the
+	                Innkeeper.</a><br>
+	                <a class="move" href="#" id="s04">Talk to the young
+	                man.</a>
+	                <br />
+	                <a class="next" href="#" id="nportDiv">Leave and exit to the
+	                street.</a>
+	            	</p>
+	            </article>
+
+	            <article class="story" id="state02c" title='Mysterious Woman' style="display:none;">
+	                <p>When you look at her face, her eyes seem to change color.
+	                <i>It was time for your rise. Prepare yourself, wanderer, the
+	                road ahead was rough.</i><br>
+	                <a class="move" href="#" id="s03">Talk to the
+	                Innkeeper.</a><br>
+	                <a class="move" href="#" id="s04">Talk to the young
+	                man.</a></p>
+	            </article>
+
+	            <article class="story" id="state03" title='Innkeeper' style="display:none;">
+	                <p>The innkeeper is washing dishes behind the bar. He dries his
+	                hands as you approach.
+	                <i>I trust everything was up to your
+	                standards sir. We don't get too many city folk out here so
+	                you'll excuse any lack of amenities.</i>
+	                <br />
+	                Embarrassed, though you are
+	                unsure why, you shake your head.
+	                <br />
+	                
+	                <a class="move" href="#" id="s02">Go over to the woman.</a><br>
+	                <a class="move" href="#" id="s04">Talk to the young
+	                man.</a><br>
+	                <a class="next" href="#" id="nportDiv">Leave and exit to the
+	                street.</a></p>
+	            </article>
+	           
+
+	            <article class="story" id="state04" title='Young Man' style="display:none;">
+	                <p>You approach the young man's table. He is unusually tall and
+	                thin. At the same time he looks up at you, the lamp flickers
+	                wildly before settling down again. You ask him <i>Could you
+	                tell me a little about this town?</i> He looks startled.
+	                <i>What? What did you say? I... I am not from this town, I
+	                couldn't tell you much.</i><br />
+	                <a class="move" href="#" id="s04c">Chat with this strange
+	                fellow.</a><br />
+	                <a class="move" href="#" id="s03">Talk to the
+	                Innkeeper.</a><br />
+	                <a class="move" href="#" id="s02">Talk to the woman.</a></p>
+	                <br />
+	                <a class="next" href="#" id="nportDiv">Leave and exit to the
+	                street.</a>
+	            </article>
+
+	            <article class="story" id="state04c" title='Young Man' style="display:none;">
+	                <p><i>OK. My name is <span class="name">Actor</span>.</i> You
+	                approach the young man's table. He is unusually tall and thin.
+	                At the same time he looks up at you, the lamp flickers wildly
+	                before settling down again. You ask him <i>Could you tell me a
+	                little about this town?</i> He looks startled. <i>What? What
+	                did you say? I... I am not from this town, I couldn't tell you
+	                much.</i><br />
+	                <a class="move" href="#" id="s03" alt="Talk to the Innkeeper">Talk to the
+	                Innkeeper.</a> <br />
+	                <a class="move" href="#" id="s02">Talk to the
+	                woman.</a></p>
+	            </article>
+	            
+            </div>	<!-- End id="storyHolder" -->
+
+            <aside class="four columns border" id="cardinals" >
+                Location: <span id="location">The Town of Narriweather</span>
+            </aside>
+            
+            <br class="clear" />
+
+            <!-- Main Image -->
+            <div id="mainImage">
+                <a href="#"></a>
+            </div><!-- id="mainImage"-->
+
+        </div><!-- End Main -->
+
+        <div class="four columns border" id="info">
+            <img src="images/tree.png" id="avatar" class="avatar" alt="Avatar Icon"/><h4><span id="actor">The Actor</span></h4>
+
+            <ul id="stats" style="display:block;">
+            	<li><span id="type">Freelancer</span></li>
+                <li style="display:none;">Exp: <span id="level" class="ui-state-highlight field">0</span></li>
+
+                <li>Time Score:
+                	<span class="ui-state-highlight field">
+                		<span id="time">0</span>
+            		</span>
+            	</li>
+            	<li>Cash:
+                	<span class="ui-state-highlight field">
+                		<span id="money">0</span>
+                		<span style="top:-2px; position:relative;">ø</span>
+            		</span>
+            	</li>
+            	<li>Friends:
+                	<span class="ui-state-highlight field">
+                		<span id="friends">0</span>
+            		</span>
+            	</li>
+<!--
+                <li style="display:none;">HP: <span class="ui-state-highlight field">
+                	<span id="hp">8</span> / <span id="maxHP">12</span></span>
+
+                    <div id="healthBar"></div>
+                </li>
+ -->
+            </ul>
+            <hr />
+            
+            <span style="margin-left:10px;">
+				Got feedback? <a href="forum" id="feedback" target="_blank">Click here</a>.
+			</span>
+        </div><!-- End info -->
+        <br class="clear" />
+        <footer class="sixteen columns border"><p><a href="mailto:stephen.burgess@purchase.edu?Subject=Astrablade%20game">Stephen Burgess</a> © 2014</p></footer>
+    </div><!-- container -->
+    <!-- End Document
+================================================== -->
+</body>
+</html>
